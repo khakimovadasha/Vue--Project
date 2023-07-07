@@ -20,7 +20,7 @@ export default {
 
 
 
-<style >
+<style>
 *{
     margin: 0;
     padding: 0;
@@ -31,6 +31,11 @@ body {
     color: aliceblue;
     background-color: rgb(51, 51, 51);
     padding: 20px;
+    @media (min-width : 1050px)  {
+        width: 1000px;
+        margin: 0 auto;
+    }
 }
+
 
 </style>

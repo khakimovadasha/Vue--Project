@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="toggleConnection">{{ isConnected ? 'Отключиться от сервера' : 'Подключиться к серверу' }}</button>
+        <button class="server_btn" @click="toggleConnection">{{ isConnected ? 'Отключиться от сервера' : 'Подключиться к серверу' }}</button>
         <h1>Комментарии:</h1>
         <comment-item :comment="comment" v-for="comment in comments" :key="comment.id"></comment-item>
     </div>
@@ -42,5 +42,11 @@ export default {
 
 
 <style>
-    
+.server_btn {
+    margin: 20px ;
+    padding: 10px 15px;
+    background-color: white;
+    border: 2px solid grey;
+    border-radius: 15px;
+}
 </style>
