@@ -2,7 +2,7 @@
     <div>
         <button class="server_btn" @click="toggleConnection">{{ isConnected ? 'Отключиться от сервера' : 'Подключиться к серверу' }}</button>
         <h1>Комментарии:</h1>
-        <comment-item :comment="comment" v-for="comment in comments" :key="comment.id"></comment-item>
+        <comment-item :comment="comment" v-for="comment in comments.reverse()" :key="comment.id"></comment-item>
     </div>
 </template>
 
