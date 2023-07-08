@@ -1,40 +1,41 @@
 <template lang="">
-    <div>
-        <comment-form></comment-form>
-        <comment-list></comment-list>
-    </div>
+  <div>
+    <comment-form></comment-form>
+    <comment-list></comment-list>
+  </div>
 </template>
 
 
 
 <script>
-import axios from 'axios';
+
 import CommentList from './components/CommentList.vue';
 import CommentForm from './components/CommentForm.vue';
+
 export default {
-    components: {
-        CommentList, CommentForm
-    },
+  components: {
+    CommentList, CommentForm, 
+  },
 }
 </script>
 
 
 
-<style>
+<style >
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    color: aliceblue;
-    background-color: rgb(51, 51, 51);
-    padding: 20px;
-    @media (min-width : 1050px)  {
-        width: 1000px;
-        margin: 0 auto;
-    }
+  color: aliceblue;
+  background-color: rgb(51, 51, 51);
+  padding: 30px;
+  @media (min-width : 1050px)  {
+    width: 1000px;
+    margin: 0 auto;
+  }
 }
 
 
