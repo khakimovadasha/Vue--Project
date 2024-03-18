@@ -4,7 +4,8 @@
     <p class="comment__text"><strong>Комментарий: </strong>{{ comment.text }}</p>
     <time class="comment__text" :datetime="formattedDate"><strong>Время: </strong>{{ formattedDate }}</time>
     <p class="comment__reply-count"><strong>Ответов: </strong>{{ getReplyCount(comment.id) }}</p>
-    <button class="button button--add" @click="showForm">Добавить комментарий</button>
+    <button class="button button--add" @click="showForm(comment.id)">Добавить комментарий</button>
+
 
     <ul v-if="hasReplies(comment.id)" class="comment__replies">
       <comment-item class="comment__child" v-for="reply in getReplies(comment.id)" :comment="reply" :comments="comments" :key="reply.id" :class="colorReaction"></comment-item>
@@ -35,6 +36,9 @@ export default {
     getReplyCount(commentId) {
       const replies = this.getReplies(commentId);
       return replies.length || 0;
+    },
+    showForm(commentId) {
+      this.$emit('click', commentId);
     },
   },
   computed: {

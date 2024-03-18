@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <div>
     <comment-form></comment-form>
     <comment-list></comment-list>

@@ -1,9 +1,12 @@
 <template>
   <div>
+    <CommentForm ref="commentForm" />
+
     <button class="button button--server" @click="toggleConnection">{{ isConnected ? 'Отключиться от сервера' : 'Подключиться к серверу' }}</button>
     <h1 class="title">Комментарии:</h1>
     <p class="comment-count">Всего комментариев: {{ comments.length }}</p>
-    <comment-item :comment="comment" :comments="comments" v-for="comment in reversedComments" :key="comment.id"></comment-item>
+    <comment-item :comment="comment" :comments="comments" v-for="comment in reversedComments" :key="comment.id" @click="showCommentForm"></comment-item>
+
   </div>
 </template>
 
@@ -28,6 +31,10 @@ export default {
         await this.fetchComments();
       }
     },
+    showCommentForm(commentId) {
+      this.$refs.commentForm.newComment.parentId = commentId;
+      this.$refs.commentForm.showForm();
+  },
   },
   created() {
     this.fetchComments();
